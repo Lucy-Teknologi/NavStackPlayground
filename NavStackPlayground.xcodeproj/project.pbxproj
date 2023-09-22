@@ -14,6 +14,11 @@
 		8DCCD72D2ABD84140053634C /* NavStackPlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCCD72C2ABD84140053634C /* NavStackPlaygroundTests.swift */; };
 		8DCCD7372ABD84140053634C /* NavStackPlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCCD7362ABD84140053634C /* NavStackPlaygroundUITests.swift */; };
 		8DCCD7392ABD84140053634C /* NavStackPlaygroundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCCD7382ABD84140053634C /* NavStackPlaygroundUITestsLaunchTests.swift */; };
+		8DCCD7462ABD84280053634C /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCCD7452ABD84280053634C /* NavigationDestination.swift */; };
+		8DCCD7492ABD87950053634C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCCD7482ABD87950053634C /* WelcomeView.swift */; };
+		8DCCD74B2ABD88870053634C /* InputNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCCD74A2ABD88870053634C /* InputNameView.swift */; };
+		8DCCD74D2ABD88FE0053634C /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCCD74C2ABD88FE0053634C /* DisplayView.swift */; };
+		8DCCD74F2ABD89920053634C /* DeepDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCCD74E2ABD89920053634C /* DeepDisplayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		8DCCD7322ABD84140053634C /* NavStackPlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavStackPlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DCCD7362ABD84140053634C /* NavStackPlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavStackPlaygroundUITests.swift; sourceTree = "<group>"; };
 		8DCCD7382ABD84140053634C /* NavStackPlaygroundUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavStackPlaygroundUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8DCCD7452ABD84280053634C /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
+		8DCCD7482ABD87950053634C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		8DCCD74A2ABD88870053634C /* InputNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameView.swift; sourceTree = "<group>"; };
+		8DCCD74C2ABD88FE0053634C /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
+		8DCCD74E2ABD89920053634C /* DeepDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDisplayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +104,9 @@
 		8DCCD71A2ABD84130053634C /* NavStackPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				8DCCD7472ABD878C0053634C /* UI */,
 				8DCCD71B2ABD84130053634C /* NavStackPlaygroundApp.swift */,
+				8DCCD7452ABD84280053634C /* NavigationDestination.swift */,
 				8DCCD71D2ABD84130053634C /* ContentView.swift */,
 				8DCCD71F2ABD84140053634C /* Assets.xcassets */,
 				8DCCD7212ABD84140053634C /* Preview Content */,
@@ -125,6 +137,17 @@
 				8DCCD7382ABD84140053634C /* NavStackPlaygroundUITestsLaunchTests.swift */,
 			);
 			path = NavStackPlaygroundUITests;
+			sourceTree = "<group>";
+		};
+		8DCCD7472ABD878C0053634C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8DCCD7482ABD87950053634C /* WelcomeView.swift */,
+				8DCCD74A2ABD88870053634C /* InputNameView.swift */,
+				8DCCD74C2ABD88FE0053634C /* DisplayView.swift */,
+				8DCCD74E2ABD89920053634C /* DeepDisplayView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +281,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DCCD71E2ABD84130053634C /* ContentView.swift in Sources */,
+				8DCCD7462ABD84280053634C /* NavigationDestination.swift in Sources */,
+				8DCCD74F2ABD89920053634C /* DeepDisplayView.swift in Sources */,
+				8DCCD74B2ABD88870053634C /* InputNameView.swift in Sources */,
+				8DCCD74D2ABD88FE0053634C /* DisplayView.swift in Sources */,
 				8DCCD71C2ABD84130053634C /* NavStackPlaygroundApp.swift in Sources */,
+				8DCCD7492ABD87950053634C /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

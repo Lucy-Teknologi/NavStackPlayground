@@ -7,15 +7,61 @@
 
 import SwiftUI
 
+struct DeepDisplayNavArg: Hashable {
+    
+}
+
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+    
+    @Environment(\.dismiss) private var dismiss
+    
+    @StateObject private var navigation = NavigationObservable()
+    private var currentDestination: NavigationDestination {
+        navigation.destinations.first ?? .welcome
+    }
+    
+    @ViewBuilder func NavigationRouter(destination: NavigationDestination) -> some View {
+        switch destination {
+        case .welcome:
+            WelcomeView(onNavigate: { navigation.replacing(with: .input_name) })
+                .transition(.slide)
+        case .input_name:
+            InputNameView(
+                title: "Input Name",
+                navigate: { navigation.replacing(with: .input_other) }
+            )
+            .transition(.slide)
+        case .display(let name):
+            DisplayView(navigate: navigation.navigate, name: name)
+                .transition(.opacity)
+        case .deep_display(let name, let value):
+            DeepDisplayView(name: name, number: value, toTop: { navigation.toTopLevel() })
+                .transition(.opacity)
+        case .input_other:
+            InputNameView(
+                title: "Input Other",
+                navigate: { navigation.replacing(with: .input_name) }
+            )
+            .transition(.opacity)
         }
-        .padding()
+    }
+    
+    var body: some View {
+        NavigationStack(path: $navigation.destinations) {
+            EmptyView()
+                .progressViewStyle(.circular)
+                .navigationDestination(
+                    for: DeepDisplayNavArg.self,
+                    destination: { arg in  }
+                )
+                .navigationDestination(
+                    for: NavigationDestination.self,
+                    destination: {
+                        NavigationRouter(destination: $0).navigationBarBackButtonHidden()
+                    }
+                )
+        }
+        .animation(.easeIn, value: currentDestination)
     }
 }
 
